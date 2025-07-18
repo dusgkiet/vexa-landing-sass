@@ -1,0 +1,94 @@
+.meet-marker {
+  background-color: $color-green-themes;
+  padding-bottom: 200px;
+
+  &-title {
+    h2 {
+      text-align: center;
+      color: $color-black-themes;
+      font-size: $fs-h2;
+    }
+  }
+
+  &-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+
+    @media screen and (max-width : 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    &-item {
+      position: relative;
+      overflow: hidden;
+
+      &:last-child {
+        @media screen and (max-width : 1024px) {
+          grid-column: 2;
+        }
+      }
+
+      &:hover {
+        .meet-marker-content-item-detail {
+          opacity: 1;
+          bottom: 0;
+        }
+      }
+
+      &-detail {
+        position: absolute;
+        bottom: -80px;
+        opacity: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px 15px;
+        background-color: rgba(255, 255, 255, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: all 0.4s;
+
+        &-title {
+          h3 {
+            &:hover {
+              color: $color-green-themes;
+              cursor: pointer;
+            }
+          }
+        }
+
+        .meet-maket-action {
+          &:hover {
+            .meet-maker-social {
+              opacity: 1;
+              height: 100%;
+              transform: scaleY(1);
+            }
+          }
+
+          i {
+            color: $color-green-themes;
+          }
+
+          .meet-maker-social {
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            position: absolute;
+            bottom: 60%;
+            opacity: 0;
+            transform: scaleY(0);
+            transition: all 0.4s;
+          }
+        }
+      }
+    }
+  }
+}

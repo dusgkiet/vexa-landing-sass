@@ -1,0 +1,67 @@
+.client {
+  background-color: $color-white-themes;
+  color: $color-black-themes;
+
+  &-content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+
+    &-image {
+      img {
+        width: 433px;
+        height: 418px;
+      }
+    }
+
+    &-list {
+      flex: 1;
+      padding-left: 100px;
+      display: grid;
+      grid-template-rows: repeat(4, 1fr);
+      gap: 30px;
+
+      @media screen and (max-width: 1024px) {
+        padding-left: 30px;
+
+      }
+
+
+      &-item {
+        border-top: 1px solid $color-black-themes;
+        border-bottom: 1px solid $color-black-themes;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        transition: all 0.5s;
+
+        &:hover {
+          background-color: $color-black-themes;
+
+          p {
+            color: $color-white-themes;
+          }
+
+          i {
+            transform: rotate(0);
+            color: $color-green-themes;
+          }
+        }
+
+        p {
+          font-family: "Aclonica",
+            sans-serif;
+          font-size: $fs-dropdown;
+          transition: all 0.5s;
+        }
+
+        i {
+          font-size: 24px;
+          transform: rotate(-45deg);
+          transition: all 0.5s;
+        }
+      }
+    }
+  }
+}
